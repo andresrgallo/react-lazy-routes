@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 // Import the Home component to be used below
-import Home from './Home/Home';
+import Home from './Home/home';
 // Import the Maps component to be used below
-import Maps from './Maps/Maps';
+import Maps from './Maps/maps';
 // Import the Blogs component to be used below
-import Blog from './Blog/Blog';
+import Blog from './Blog/blog';
 // Import the NotFound component to be used below
-import NotFound from './NotFound/NotFound';
+import NotFound from './NotFound/notFound';
 // Import CSS from App.css
 import './App.css';
 import createBrowserHistory from 'history/createBrowserHistory';

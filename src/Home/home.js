@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './Home.css';
-import Button from '../NavButton/NavButton';
+import './home.css';
+import Button from '../NavButton/navButton';
 
 class Home extends Component {
   render() {
