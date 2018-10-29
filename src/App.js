@@ -29,7 +29,7 @@ class App extends Component {
 
               <div className="navbar-end">
                 <Link to="/maps">
-                  <span className="navbar-item">Maps</span>
+                  <span className="navbar-item mr-2">Maps</span>
                 </Link>
                 <Link to="/blog">
                   <span className="navbar-item">Blog</span>
