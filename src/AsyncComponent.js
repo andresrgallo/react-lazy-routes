@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 export default function asyncComponent(getComponent) {
   class AsyncComponent extends Component {
-    static Component = null;
     state = {Component: AsyncComponent.Component};
 
     componentWillMount() {
       if (!this.state.Component) {
         getComponent().then(Component => {
+          console.log('at async compwillmount');
           AsyncComponent.Component = Component;
           this.setState({Component});
         });
@@ -20,5 +20,6 @@ export default function asyncComponent(getComponent) {
       return null;
     }
   }
+  AsyncComponent.Component = null;
   return AsyncComponent;
 }

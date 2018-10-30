@@ -1,19 +1,33 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
-// Import the Home component to be used below
-import Home from './Home/home';
-// Import the Maps component to be used below
-import Maps from './Maps/maps';
-// Import the Blogs component to be used below
-import Blog from './Blog/blog';
+import asyncComponent from './AsyncComponent';
 // Import the NotFound component to be used below
 import NotFound from './NotFound/notFound';
 // Import CSS from App.css
 import './App.css';
 import createBrowserHistory from 'history/createBrowserHistory';
 
+// Dynamically imported components
+const Home = asyncComponent(() =>
+  import('./Home/home').then(module => {
+    console.log('at app', module.default);
+    return module.default;
+  }),
+);
+console.log('type---', typeof Home);
+const Maps = asyncComponent(() =>
+  import('./Maps/maps').then(module => module.default),
+);
+
+const Blog = asyncComponent(() =>
+  import('./Blog/blog').then(module => {
+    return module.default;
+  }),
+);
+
 const history = createBrowserHistory();
+
 class App extends Component {
   render() {
     return (
